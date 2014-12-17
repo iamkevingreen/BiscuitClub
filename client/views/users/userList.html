@@ -1,0 +1,14 @@
+<template name="userList">
+  <div class="user-profile">
+    <img src="{{profile.image.src}}">
+    <h3>{{profile.name}}</h3>
+    {{#each emails}}
+      {{address}}
+    {{/each}}
+
+    <a href="/user/{{_id}}">VIEW</a>
+    {{#if isInRole 'admin'}}
+      <a href="/user/{{_id}}/edit">EDIT</a>
+    {{/if}}
+  </div>
+</template>

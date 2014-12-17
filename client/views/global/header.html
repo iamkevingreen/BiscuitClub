@@ -1,9 +1,17 @@
 <template name="header">
-  <header style="background: url({{ dict 'headerImage.link' '' }}) {{ dict 'headerBackground' '#CCC' }} center center; background-size:cover;">
-    <div class="centered-v">
-      <h1><a href="{{ pathFor 'base' }}">{{ dict 'siteName' 'Orion Starter'}}</a></h1>
-      <h5>{{ dict 'siteDescription' }}</h5>
+  <header>
+    <div class="container">
+      <div class="name">
+        <h1><a href="{{ pathFor 'base' }}">{{ dict 'siteName' 'BiscuitClub'}}</a></h1>
+      </div>
+      <nav>
+        <ul>
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'users'}}">Users</a></li>
+          {{/if}}
+          <li>{{> loginButtons}}</li>
+        </ul>
+      </nav>
     </div>
   </header>
-  {{> loginButtons}}
 </template>

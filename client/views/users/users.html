@@ -1,16 +1,16 @@
 <template name="users">
+  <div class="header">
+    <div class="container">
+      <h2>User Directory</h2>
+    </div>
+  </div>
   <div class="container">
-    USERS
-
     {{> directory}}
   </div>
 </template>
 
 <template name="directory">
-  bagels =
   {{#each users}}
-    {{#each emails}}
-      {{address}}
-    {{/each}}
+    {{> userList}}
   {{/each}}
 </template>

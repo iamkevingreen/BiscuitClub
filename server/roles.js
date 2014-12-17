@@ -4,5 +4,5 @@ Meteor.publish(null, function (){
 });
 
 Meteor.publish("directory", function () {
-  return Meteor.users.find({}, {fields: {emails: 1, username: 1}});
+  return Meteor.users.find({}, {fields: {emails: 1, username: 1, profile: 1}});
 });

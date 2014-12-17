@@ -28,11 +28,14 @@ Router.map(function() {
     fastRender: true,
     layoutTemplate: 'layout'
   });
-    this.route('/user/:_id/edit', {
-      name: 'userEdit',
+    this.route('/user/:_id', {
+      name: 'userProfile',
+      fastRender: true,
+      layoutTemplate: 'layout',
       data: function() {
         return Meteor.users.findOne(this.params._id);
       }
+
     });
 
   // Blog and individual blog posts
@@ -94,9 +97,9 @@ var requireAdmin = function() {
   }
 }
 
-Router.onBeforeAction(requireAdmin, {
-  only: 'users'
-});
+// Router.onBeforeAction(requireAdmin, {
+//   only: 'users'
+// });
 
 // Handle 404s properly
 
