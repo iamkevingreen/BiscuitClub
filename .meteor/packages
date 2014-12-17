@@ -20,9 +20,7 @@ meteorhacks:subs-manager
 aslagle:reactive-table
 aldeed:collection2
 aldeed:simple-schema
-iamkevingreen:meteor-devicon
 aldeed:autoform
-ccosming:font-mfizz
 mrt:bootswatch-yeti
 email
 meteorhacks:kadira
@@ -34,4 +32,3 @@ alethes:pages
 dfischer:prerenderio
 accounts-ui
 alanning:roles
-
