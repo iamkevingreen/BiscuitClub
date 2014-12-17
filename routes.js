@@ -3,7 +3,7 @@ Router.configure({
   notFoundTemplate: 'notFound',
   fastRender: true,
   waitOn: function() {
-    return [orion.subs.subscribe('dictionary'), orion.subs.subscribe('entity', 'posts'), orion.subs.subscribe('entity', 'pages')];
+    return [orion.subs.subscribe('dictionary'), Meteor.subscribe("directory"), orion.subs.subscribe('entity', 'posts'), orion.subs.subscribe('entity', 'pages')];
   }
 });
 
@@ -27,7 +27,13 @@ Router.map(function() {
     path: '/users',
     fastRender: true,
     layoutTemplate: 'layout'
-  })
+  });
+    this.route('/user/:_id/edit', {
+      name: 'userEdit',
+      data: function() {
+        return Meteor.users.findOne(this.params._id);
+      }
+    });
 
   // Blog and individual blog posts
 

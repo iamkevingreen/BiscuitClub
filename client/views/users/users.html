@@ -1,0 +1,16 @@
+<template name="users">
+  <div class="container">
+    USERS
+
+    {{> directory}}
+  </div>
+</template>
+
+<template name="directory">
+  bagels =
+  {{#each users}}
+    {{#each emails}}
+      {{address}}
+    {{/each}}
+  {{/each}}
+</template>
