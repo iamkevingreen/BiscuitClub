@@ -1,5 +1,5 @@
 .btn {
-  padding: 10px 30px;
+  padding: 10px 20px 10px 14px;
   @include border-top-radius(2px);
   @include border-right-radius(2px);
   @include border-bottom-radius(2px);
@@ -10,8 +10,17 @@
   margin: 0 8px 0 0;
   outline: none;
   @include transition(all .5s);
+  i {
+    margin-right: 14px;
+  }
   &:hover {
     @include transition(all .5s);
+  }
+  &.btn-dark {
+    background: $darkButton;
+    &:hover {
+      background: #fff;
+    }
   }
   &.btn-thin {
     border-color: #fff;

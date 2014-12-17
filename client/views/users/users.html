@@ -2,6 +2,9 @@
   <div class="header">
     <div class="container">
       <h2>User Directory</h2>
+      {{#if isInRole 'admin'}}
+        <a href="{{pathFor 'userAdd'}}" class="btn btn-dark"><i class="fa fa-plus-square"></i>Create New User</a>
+      {{/if}}
     </div>
   </div>
   <div class="container">

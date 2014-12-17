@@ -11,9 +11,8 @@ Router.map(function() {
 
   // Site index
 
-  this.route('layout', {
+  this.route('base', {
     path: '/',
-    fastRender: true,
     onAfterAction: function() {
       var dict;
       if (!Meteor.isClient) {
@@ -25,12 +24,14 @@ Router.map(function() {
 
   this.route('users', {
     path: '/users',
-    fastRender: true,
     layoutTemplate: 'layout'
   });
+    this.route('user/add', {
+      name: 'userAdd',
+      layoutTemplate: 'layout'
+    });
     this.route('/user/:_id', {
       name: 'userProfile',
-      fastRender: true,
       layoutTemplate: 'layout',
       data: function() {
         return Meteor.users.findOne(this.params._id);
@@ -42,12 +43,10 @@ Router.map(function() {
 
   this.route('blog', {
     path: '/blog',
-    fastRender: true,
   });
   this.route('post', {
     path: '/blog/:slug',
     layoutTemplate: 'layout',
-    fastRender: true,
     waitOn: function() {
       return [orion.subs.subscribe('entity', 'posts', {slug: this.params.slug})];
     },

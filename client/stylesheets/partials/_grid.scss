@@ -1,0 +1,6 @@
+.col-6 {
+  width: 50%;
+  float: left;
+  @include box-sizing(border-box);
+  padding: 10px;
+}

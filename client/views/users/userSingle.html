@@ -1,12 +1,32 @@
 <template name="userProfile">
-  <div class="user-profile">
-    <img src="{{profile.image.src}}">
-    <h3>{{profile.name}}</h3>
-    {{#each emails}}
-      {{address}}
-    {{/each}}
-    {{#if isInRole 'admin'}}
-      <a href="/user/{{_id}}/edit">EDIT</a>
-    {{/if}}
+  <div class="header">
+    <div class="container">
+      <h2><a href="{{pathFor 'users'}}">User Directory</a> > {{profile.name}}</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="user-profile">
+      <img src="{{profile.image.src}}">
+      {{#each emails}}
+        Email: {{address}}
+      {{/each}}
+      {{#if isInRole 'admin'}}
+        <a href="/user/{{_id}}/edit">EDIT</a>
+      {{/if}}
+    </div>
+    <hr>
+    <div class="user-books">
+      <h4>Books Read:</h4>
+      <ul>
+        {{#each profile.books}}
+          <li>
+            <div class="single-book">
+              <img src="http://placekitten.com/g/200/300" />
+              <p>Book ID:{{this}}</p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </template>
