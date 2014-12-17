@@ -3,7 +3,12 @@ Router.configure({
   notFoundTemplate: 'notFound',
   fastRender: true,
   waitOn: function() {
-    return [orion.subs.subscribe('dictionary'), Meteor.subscribe("directory"), orion.subs.subscribe('entity', 'posts'), orion.subs.subscribe('entity', 'pages')];
+    return [
+      // orion.subs.subscribe('dictionary'),
+      Meteor.subscribe("directory"),
+      // orion.subs.subscribe('entity', 'posts'),
+      // orion.subs.subscribe('entity', 'pages')
+      ];
   }
 });
 
