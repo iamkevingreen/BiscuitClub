@@ -72,6 +72,26 @@ Router.map(function() {
 
 });
 
+// Check if a user is Admin
+
+var requireAdmin = function() {
+  var loggedInUser = Meteor.user();
+
+  if (!loggedInUser || (!Roles.userIsInRole(loggedInUser, ['admin']))) {
+    if (Meteor.loggingIn()) {
+      this.render(this.loadingTemplate);
+    } else {
+      this.render('accessDenied');
+    }
+  } else {
+    this.next();
+  }
+}
+
+Router.onBeforeAction(requireAdmin, {
+  only: 'users'
+});
+
 // Handle 404s properly
 
 Router.plugin('dataNotFound', {notFoundTemplate: 'notFound'});

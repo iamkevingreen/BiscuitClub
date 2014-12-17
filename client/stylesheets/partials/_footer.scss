@@ -7,6 +7,10 @@ footer {
   a {
     svg {
       fill: #de4f4f;
+      height: 22px;
+      width: 24px;
+      position: relative;
+      top:4px;
     }
     &:hover {
       svg {
