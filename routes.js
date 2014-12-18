@@ -27,6 +27,15 @@ Router.map(function() {
     }
   });
 
+  this.route('books', {
+    path: '/books',
+    layoutTemplate: 'layout'
+  });
+    this.route('books/find',{
+      name: 'findBooks',
+      layoutTemplate: 'layout'
+    });
+
   this.route('users', {
     path: '/users',
     layoutTemplate: 'layout'
