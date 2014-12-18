@@ -7,14 +7,6 @@ Template.directory.helpers({
   }
 });
 
-Template.userAdd.helpers({
-   users: function () {
-    return Meteor.users;
-  },
-  userSchema: function () {
-    return Schema.User;
-  }
-});
 
 Template.userAdd.events({
   "submit #userCreate": function(event, template) {
